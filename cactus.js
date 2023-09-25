@@ -4,7 +4,7 @@ import {
   getCustomProperty,
 } from "./updateCustomProperty.js";
 
-const SPEED = 0.05;
+const SPEED = 0.05; // make sure this is the same with SPEED in ground.js
 const CACTUS_INTERVAL_MIN = 700;
 const CACTUS_INTERVAL_MAX = 2000;
 const worldElem = document.querySelector("[data-world]");
