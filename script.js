@@ -1,4 +1,4 @@
-import { setupGround, updateGround } from "./ground.js";
+import { updateGround, setupGround } from "./ground.js";
 import { updateDino, setupDino, getDinoRect, setDinoLose } from "./dino.js";
 import { updateCactus, setupCactus, getCactusRects } from "./cactus.js";
 
@@ -17,14 +17,12 @@ document.addEventListener("keydown", handleStart, { once: true });
 let lastTime;
 let speedScale;
 let score;
-
 function update(time) {
   if (lastTime == null) {
     lastTime = time;
     window.requestAnimationFrame(update);
     return;
   }
-
   const delta = time - lastTime;
 
   updateGround(delta, speedScale);
@@ -85,7 +83,7 @@ function setPixelToWorldScale() {
   if (window.innerWidth / window.innerHeight < WORLD_WIDTH / WORLD_HEIGHT) {
     worldToPixelScale = window.innerWidth / WORLD_WIDTH;
   } else {
-    worldToPixelScale = windoow.innerHeigh / WORLD_HEIGHT;
+    worldToPixelScale = window.innerHeight / WORLD_HEIGHT;
   }
 
   worldElem.style.width = `${WORLD_WIDTH * worldToPixelScale}px`;
