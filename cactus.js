@@ -40,10 +40,16 @@ export function getCactusRects() {
   });
 }
 
+const obstacleSprites = [
+  "imgs/obstacle1.png",
+  "imgs/obstacle2.png",
+  "imgs/obstacle3.png"
+]
+
 function createCactus() {
   const cactus = document.createElement("img");
   cactus.dataset.cactus = true;
-  cactus.src = "imgs/cactus.png";
+  cactus.src = obstacleSprites[Math.floor(Math.random() * 3)];
   cactus.classList.add("cactus");
   setCustomProperty(cactus, "--left", 100);
   worldElem.append(cactus);
